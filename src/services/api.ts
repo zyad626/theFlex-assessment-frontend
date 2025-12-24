@@ -1,7 +1,7 @@
 import type { Listing, Review, ReviewResponse } from '../types';
 import { MOCK_LISTINGS, MOCK_REVIEWS } from './mockData';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const api = {
     getListings: async (): Promise<Listing[]> => {
