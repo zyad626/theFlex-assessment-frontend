@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { api } from '../../services/api';
 import type { Listing, Review } from '../../types';
-import { MapPin, Users, Bed, Bath, ArrowLeft, Star, Heart, Share, Wifi, Car, Utensils, Tv, CheckCircle2 } from 'lucide-react';
+import { Users, Bed, Bath, ArrowLeft, Star, Heart, Share, Wifi, Car, Utensils, Tv, CheckCircle2 } from 'lucide-react';
 
 export const PropertyDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -62,7 +62,7 @@ export const PropertyDetails: React.FC = () => {
                             className="w-full h-full object-cover hover:opacity-95 transition-opacity"
                         />
                     </div>
-                    {listing.listingImages.slice(1, 5).map((img, idx) => (
+                    {listing.listingImages.slice(1, 5).map((img) => (
                         <div key={img.id} className="relative">
                             <img
                                 src={img.url}
