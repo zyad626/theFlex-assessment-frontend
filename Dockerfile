@@ -3,6 +3,8 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+ARG VITE_API_BASE_URL
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 # Copy package.json and package-lock.json first to leverage Docker cache
 COPY package.json package-lock.json ./
 
